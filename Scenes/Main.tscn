@@ -137,6 +137,9 @@ margin_top = -14.0
 margin_right = 110.5
 margin_bottom = 14.0
 text = "Press Enter to Retry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

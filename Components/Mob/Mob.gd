@@ -14,6 +14,7 @@ func initialize(start_position, player_position):
 	var random_speed = rand_range(min_speed, max_speed)
 	velocity = Vector3.FORWARD * random_speed
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
+	$AnimationPlayer.playback_speed= random_speed / min_speed
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):

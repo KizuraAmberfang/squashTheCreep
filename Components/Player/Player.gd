@@ -9,6 +9,7 @@ export var bounce_impulse = 16
 
 var velocity = Vector3.ZERO
 
+signal hit
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -41,3 +42,10 @@ func _process(delta):
 			if Vector3.UP.dot(collision.normal) > 0.1:
 				mob.squash()
 				velocity.y = bounce_impulse
+
+func die():
+	emit_signal("hit")
+	queue_free()
+
+func _on_ModDetector_body_entered(body):
+	die()

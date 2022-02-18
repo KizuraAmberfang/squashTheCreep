@@ -19,3 +19,7 @@ func _on_Timer_timeout():
 	var player_position = $Player.transform.origin
 	add_child(mob)
 	mob.initialize(mob_spawn_location.translation, player_position)
+
+
+func _on_Player_hit():
+	$Timer.stop()

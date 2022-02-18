@@ -4,9 +4,8 @@ export var min_speed = 10
 export var max_speed = 18
 
 var velocity = Vector3.ZERO
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+signal squashed
 
 func initialize(start_position, player_position):
 	translation = start_position
@@ -21,4 +20,8 @@ func _physics_process(_delta):
 	move_and_slide(velocity)
 
 func _on_VisibilityNotifier_screen_exited():
+	queue_free()
+	
+func squash():
+	emit_signal("squashed")
 	queue_free()

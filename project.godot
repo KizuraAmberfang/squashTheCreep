@@ -22,6 +22,10 @@ tutorial in the official documentation."
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Music="*res://Components/Music/Music.tscn"
+
 [display]
 
 window/size/width=720
